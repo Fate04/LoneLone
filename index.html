@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Special Anniversary</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        #main-content {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            max-width: 80%;
+        }
+
+        #start-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        #start-button:hover {
+            background-color: #f50057;
+            transform: scale(1.05);
+        }
+
+        #countdown {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        #song-section {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        #song-info {
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        #message {
+            margin: 30px 0;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .choice-btn {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #yes-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #yes-btn:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+
+        #no-btn {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #no-btn:hover {
+            background-color: #D32F2F;
+            transform: scale(1.05);
+        }
+
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .memory-image {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+.modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            color: #333;
+            text-align: center;
+            max-width: 80%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            padding: 8px 20px;
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="background"></div>
+    
+    <div id="countdown"></div>
+    
+    <div id="initial-screen">
+        <div id="main-content">
+            <h1>Our Special Memories</h1>
+            <button id="start-button">မောင်တို့အမှတ်တရတွေအတွက် လုံးလုံးစိတ်၀င်စားနေပြီလား</button>
+        </div>
+    </div>
+    
+    <div id="song-section">
+        <div id="main-content">
+            <h1>Our Love Story</h1>
+            <div id="message">
+                ငါတို့ရဲ့အချစ်ဇာတ်လမ်းကို ဒီသီချင်းလေးနဲ့ ဖော်ပြချင်တယ်။<br>
+                မင်းရဲ့အဖြေကို ငါစောင့်မျှော်နေတယ်...
+            </div>
+            <div class="buttons">
+                <button id="yes-btn">Yes</button>
+                <button id="no-btn">No</button>
+            </div>
+             # To: My One and Only - Lone Lone
+
+`js
+const love = {
+  name: "Lone Lone",
+  role: "Love of My Life",
+  joined: "2022-06-04",
+  priority: Infinity,
+  description: "The reason behind my smile, my peace, my everything."
+};
+
+function myLife(beforeYou, afterYou) {
+  console.log(`Before you: ${beforeYou}`);
+  console.log(`After you: ${afterYou}`);
+}
+
+myLife("Ordinary days", "A beautiful dream I never want to wake up from");
+
+// Eternal Loop of Love
+while (true) {
+  console.log("I love you more than words can say. 💖");
+}
+
+// You are not a part of my life. You are my life.
+if (love.name === "Lone Lone") {
+  console.log("My heart belongs to you forever.Do you feel my love? 🫶");
+}
+            <div id="song-info">Now playing: Justin Bieber - Anyone</div>
+        </div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>ကျေးဇူးတင်ပါတယ်</h2>
+            <p>အကောင်းဆုံးတော့နောက်ဆုံးအချိန်ထိပေးဆပ်သွားပါ့မယ်</p>
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+    
+    <audio id="bg-music" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <!-- Note: Replace with actual Justin Bieber - Anyone MP3 URL -->
+    </audio>
+
+    <script>
+        // Set your anniversary date (YYYY, MM-1, DD)
+        const anniversaryDate = new Date(2023, 0, 1); // January 1, 2023 (month is 0-indexed)
+        
+        // Background image URL - replace with your image
+        const backgroundImageUrl = 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80';
+        
+        // Memory images - replace with your images
+        const memoryImages = [
+            'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+            'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+        ];
+        
+        // Set background image
+        document.getElementById('background').style.backgroundImage = url(${backgroundImageUrl});
+        
+        // Countdown timer
+        function updateCountdown() {
+            const now = new Date(2022,06,04);
+            const diff = now - anniversaryDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            
+            document.getElementById('countdown').textContent = Together for ${days} days;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Start button click event
+        document.getElementById('start-button').addEventListener('click', function() {
+            document.getElementById('initial-screen').style.display = 'none';
+            document.getElementById('song-section').style.display = 'block';
+            
+            // Start playing music
+            document.getElementById('bg-music').play();
+// Create floating hearts animation
+            setInterval(createHeart, 300);
+        });
+        
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 4000);
+        }
+        
+        // Create floating memory images
+        function createMemoryImage() {
+            const img = document.createElement('img');
+            img.classList.add('memory-image');
+            img.src = memoryImages[Math.floor(Math.random() * memoryImages.length)];
+            img.style.left = Math.random() * 100 + 'vw';
+            img.style.top = '100vh';
+            img.style.animationDuration = (Math.random() * 6 + 4) + 's';
+            document.body.appendChild(img);
+            
+            setTimeout(() => {
+                img.remove();
+            }, 6000);
+        }
+        
+        // Yes button click event
+        document.getElementById('yes-btn').addEventListener('click', function() {
+            // Create lots of hearts and memory images
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    createHeart();
+                    createMemoryImage();
+                }, i * 100);
+            }
+        });
+        
+        // No button click event
+        document.getElementById('no-btn').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'flex';
+        });
+        
+        // Close modal button
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
